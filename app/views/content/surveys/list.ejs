@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Survey List</h1>
     <% if(displayName) { %>
-    <a href="/movie-add" class="btn btn-primary" role="button">
+    <a href="/survey-add" class="btn btn-primary" role="button">
         <i class="fas fa-plus-circle"></i> Create a Survey</a>
     <% } %>
     <div class="row">
@@ -20,32 +20,32 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="movieList">
+                <tbody id="surveyList">
                     <!-- Repeatable Rows -->
-                    <% for(let count = 0; count < movies.length; count++) { %>
+                    <!-- <% for(let count = 0; count < surveys.length; count++) { %> -->
                         <tr>
                             <th scope="row" class="text-center"><%= count + 1 %></th>
-                            <td><%= movies[count].name %></td>
-                            <td><%= movies[count].year %></td>
-                            <td><%= movies[count].director %></td>
-                            <td><%= movies[count].genre %></td>
-                            <td><%= movies[count].runtime %></td>
-                            <% if(displayName) { %>
+                            <td><%= surveys[count].name %></td>
+                            <td><%= surveys[count].year %></td>
+                            <td><%= surveys[count].director %></td>
+                            <td><%= surveys[count].genre %></td>
+                            <td><%= surveys[count].runtime %></td>
+                            <!-- <% if(displayName) { %> -->
                             
                             <td class="text-center col-1">
-                                <a href="/movie-edit/<%= movies[count]._id %>"
+                                <a href="/survey-edit/<%= surveys[count]._id %>"
                                     class="btn btn-primary btn-sm">
                                     <i class="fas fa-pencil-alt"></i> Edit</a>
                             </td>
                             
                             <td class="text-center col-1">
-                                <a href="/movie-delete/<%= movies[count]._id %>"
+                                <a href="/survey-delete/<%= surveys[count]._id %>"
                                     class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash-alt"></i> Delete</a>
                             </td>
-                            <% } %> 
+                            <!-- <% } %>  -->
                         </tr>
-                    <% } %>
+                    <!-- <% } %> -->
                 </tbody>
             </table>
         </div>

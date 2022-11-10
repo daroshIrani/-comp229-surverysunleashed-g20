@@ -41,11 +41,10 @@ import mongoose from 'mongoose';
 import { MongoURI, Secret } from '../config/config.js';
 
 // importinmg routs
-import indexRouter from './routes/index.route.server.js'
-import movieRouter from './routes/movies.route.server.js';
+import surveysRouter from './routes/surveys.router.server.js';
+import indexRouter from './routes/index.route.server.js';
 import authRouter from './routes/auth.route.server.js';
 import apiauthRouter from './routes/api/auth.api.route.server.js';
-import moviesApiRouter from './routes/api/movies.api.router.server.js';
 // instatiate express app
 const app = express();
 
@@ -120,10 +119,9 @@ passport.use(strategy);
 
 // use routes
 app.use('/', indexRouter);
-app.use('/', movieRouter);
+app.use('/', surveysRouter);
 app.use('/', authRouter);
 app.use('/api/auth', apiauthRouter);
-app.use('/api/movies', moviesApiRouter);
 
 
 export default app;
